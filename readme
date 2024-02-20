@@ -1,0 +1,34 @@
+1. open a new terminal
+   - cd api
+   - npm install
+   - npm run dev
+2. open a new terminal
+   - cd client
+   - npm install
+   - npm run dev
+3. client/src/pages/Map.jsx
+   add your google map api key in to below code
+   const googleMap = (
+        <GoogleMapReact
+            bootstrapURLKeys={{ key: }} //here 
+            onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
+            yesIWantToUseGoogleMapApiInternals
+            defaultCenter={defaultProps.center}
+            defaultZoom={defaultProps.zoom}
+            onChange={({ zoom }) => {
+                setZoomLevel(zoom);
+            }}
+    
+            options={{
+                styles: exampleMapStyles,
+            }}
+        >
+            
+            {markers}
+        </GoogleMapReact>
+    );
+
+4. root/.env
+  add your mongoDB credit.
+  MONGO = "mongodb+srv://" //here
+  JWT_SECRET = '' // here
